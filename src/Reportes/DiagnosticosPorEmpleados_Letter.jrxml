@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.3.final using JasperReports Library version 6.21.3-4a3078d20785ebe464f18037d738d12fc98c13cf  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DiagnosticosPorEmpleados_Letter" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2ffa34d6-a620-419b-a388-fe4acaf8a3df">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="AdapterCompuser"/>
+	<parameter name="ParameterDiagnosticos" class="java.lang.Integer"/>
+	<queryString language="plsql">
+		<![CDATA[{call dbo.ReporteDiagnosticosEmpleado($P{ParameterDiagnosticos})}]]>
+	</queryString>
+	<field name="Empleado" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Empleado"/>
+		<property name="com.jaspersoft.studio.field.label" value="Empleado"/>
+	</field>
+	<field name="Diagnostico" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Diagnostico"/>
+		<property name="com.jaspersoft.studio.field.label" value="Diagnostico"/>
+	</field>
+	<field name="Servicio" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Servicio"/>
+		<property name="com.jaspersoft.studio.field.label" value="Servicio"/>
+	</field>
+	<field name="Fecha de recepcion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Fecha de recepcion"/>
+		<property name="com.jaspersoft.studio.field.label" value="Fecha de recepcion"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="120" splitType="Stretch">
+			<staticText>
+				<reportElement x="-20" y="90" width="320" height="28" uuid="664ce091-1c6d-4ab7-ba08-c5cc09c8ef7e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[DIAGNOSTICOS REALIZADOS POR UN EMPLEADO ESPECÍFICO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="219" y="45" width="134" height="30" uuid="fedcdd7f-5595-46df-a02a-f68ce8088fb3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[COMPUSER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="470" y="92" width="100" height="27" uuid="02b9d293-25ef-44de-bbdc-62466b22a612"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[TEL: 2512-2523]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="7" width="100" height="46" uuid="2c664126-8848-4385-838c-322c6532ebec"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Empleado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="7" width="100" height="46" uuid="40a73ef4-8e7a-4629-84e9-de50740cebee"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Servicios ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="6" width="100" height="46" uuid="7080e14f-2aac-4b8b-856a-cce797a4b316"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Diagnosticos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="7" width="100" height="45" uuid="642532d6-969b-4f82-a39a-89e10f4f63e1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Fecha de Recepción]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="90" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="20" width="100" height="50" uuid="9dd02aec-4eda-4431-b374-efa2fdb5b998">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="922076df-c3b1-4cad-81f2-db4f505d2678"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Empleado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="130" y="20" width="100" height="50" uuid="cf3b2c39-bbcb-4cd6-8ce5-1e147c3ba840">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f21a3749-3cab-40d9-98a4-bf625e25e201"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Diagnostico}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="20" width="100" height="50" uuid="d262c81f-c761-4aa1-83b1-3932d63f84e7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="abcfdb00-6cca-4f93-8995-9741512e4f9b"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Servicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="30" width="100" height="40" uuid="f12bee3c-e339-49c7-b750-b5ad46fb301e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ec7299f9-c139-4eb9-9174-ef6df6cb2aa8"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Fecha de recepcion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="53" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="112" height="30" uuid="885f09ad-b34c-4a9c-87e7-f24a1e6e4e19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Fecha de impresión:]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="112" y="10" width="110" height="30" uuid="52c265ae-f2e2-4903-95f1-45ac92ae1dd9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="420" y="10" width="130" height="30" uuid="c556adc5-56a0-42fb-bb13-84ac65c6c02a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
